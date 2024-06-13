@@ -1,4 +1,5 @@
 ﻿using CodeFirst.Data;
+using CodeFirst.DTOs;
 using CodeFirst.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,8 +16,12 @@ public class HospController : ControllerBase
         Service = s;
         Context = c;
     }
-    
+
     [HttpPost]
     [Route("prescription")]
-    public async Task
+    public async Task<IActionResult> AddPrescription(PrescriptionDTO prescriptionDto)
+    {
+        var patient = await Service.DoesPatientExist(prescriptionDto.Patient.IdPatient);
+        return Ok("Added the prescription");
+    }
 }
