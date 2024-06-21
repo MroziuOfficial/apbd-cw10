@@ -18,7 +18,7 @@ public class DbService : IDbService
         return await Context.Patients.FindAsync(id);
     }
 
-    public async Task DoesMedicamentExist(List<MedicamentDTO> medicaments)
+    public async Task VerifyMedicamentsExist(List<MedicamentDTO> medicaments)
     {
         foreach (MedicamentDTO m in medicaments)
         {

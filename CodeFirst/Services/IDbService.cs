@@ -6,5 +6,5 @@ namespace CodeFirst.Services;
 public interface IDbService
 {
     Task<Patient?> DoesPatientExist(int id);
-    Task DoesMedicamentExist(List<MedicamentDTO> medicaments);
+    Task VerifyMedicamentsExist(List<MedicamentDTO> medicaments);
 }

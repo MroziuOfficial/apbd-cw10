@@ -1,4 +1,6 @@
-﻿namespace CodeFirst.DTOs;
+﻿using CodeFirst.Models;
+
+namespace CodeFirst.DTOs;
 
 public class PatientDTO
 {
