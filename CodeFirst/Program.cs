@@ -1,4 +1,5 @@
 using CodeFirst.Data;
+using CodeFirst.Middlewares;
 using CodeFirst.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +23,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseHttpsRedirection();
 app.MapControllers();
 
